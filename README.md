@@ -3,7 +3,9 @@ Simpalm Logging Library an enhance of native Android logging mechanism to enhanc
 
 Initialize default logging configuration in your application class:
 
-  SplConfig.setSplConfig(new SplConfig.Builder(this).build());
+```
+SplConfig.setSplConfig(new SplConfig.Builder(this).build());
+```
   
 Here is sample statement for all available configuration options:
 
