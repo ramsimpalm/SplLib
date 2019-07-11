@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Spl.v(this, "test v log menu item selected")
+        Spl.logMethod(this, "onOptionsItemSelected", "item", item);
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.

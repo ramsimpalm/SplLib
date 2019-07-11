@@ -6,6 +6,9 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Utility class to write logs in cache file
+ */
 public class FileLogger {
     public static final String FILE_BEGIN_MARKER = " ******************** ";
     public static final String NEW_LINE = "\n";
@@ -71,12 +74,21 @@ public class FileLogger {
         file = new File(dir, SDF.format(new Date()) + FILE_EXT);
     }
 
+    /**
+     * Delete all log files
+     */
     public void clearLogs() {
         for (File file : dir.listFiles()) {
             file.delete();
         }
     }
 
+    /**
+     * Append log in log in this session's log file
+     * @param tag the tag
+     * @param logType the log type
+     * @param message the message
+     */
     public void appendLog(String tag, LogType logType, String message) {
         StringBuilder builder = new StringBuilder();
         builder
@@ -113,6 +125,10 @@ public class FileLogger {
         }
     }
 
+    /**
+     * Gets all text logged until now
+     * @return logs
+     */
     public String getAllLogs() {
         StringBuilder builder = new StringBuilder();
         File[] files = dir.listFiles();
@@ -128,6 +144,11 @@ public class FileLogger {
         return builder.toString();
     }
 
+    /**
+     * Read file in string
+     * @param file the file to read
+     * @return file content
+     */
     private String getFileContent(File file) {
         StringBuilder builder = new StringBuilder();
         BufferedReader reader = null;

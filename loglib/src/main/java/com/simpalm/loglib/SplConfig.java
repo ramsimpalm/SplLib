@@ -10,6 +10,10 @@ import java.util.List;
 public class SplConfig {
     private static SplConfig splConfig;
 
+    /**
+     * Sets the configuration required for Simpalm Logger
+     * @param splConfig
+     */
     public static void setSplConfig(SplConfig splConfig) {
         SplConfig.splConfig = splConfig;
     }
@@ -50,58 +54,111 @@ public class SplConfig {
         });
     }
 
+    /**
+     * Gets the configuration instance
+     * @return the config instance
+     */
     public static SplConfig get() {
         return splConfig != null ? splConfig : new SplConfig();
     }
 
+    /**
+     * Sets the connected network
+     * @param connectedNetworkType type of network connect
+     */
     public void setConnectedNetworkType(String connectedNetworkType) {
         this.connectedNetworkType = connectedNetworkType;
     }
 
+    /**
+     * Returns true if Log output is enabled false otherwise
+     * @return true if Log output is enabled false otherwise
+     */
     public boolean isEnableLogOutput() {
         return enableLogOutput;
     }
 
+    /**
+     * Returns true if verbose log is enabled false otherwise
+     * @return true if verbose log is enabled false otherwise
+     */
     public boolean isEnableVerboseLogs() {
         return enableVerboseLogs;
     }
 
+    /**
+     * Returns true if debug log is enabled false otherwise
+     * @return true if debug log is enabled false otherwise
+     */
     public boolean isEnableDebugLogs() {
         return enableDebugLogs;
     }
 
+    /**
+     * Returns true if info log is enabled false otherwise
+     * @return true if info log is enabled false otherwise
+     */
     public boolean isEnableInfoLogs() {
         return enableInfoLogs;
     }
 
+    /**
+     * Returns true if warning log is enabled false otherwise
+     * @return true if warning log is enabled false otherwise
+     */
     public boolean isEnableWarningLogs() {
         return enableWarningLogs;
     }
 
+    /**
+     * Returns true if error log is enabled false otherwise
+     * @return true if error log is enabled false otherwise
+     */
     public boolean isEnableErrorLogs() {
         return enableErrorLogs;
     }
 
+    /**
+     * Gets the list of granted permissions
+     * @return permissions
+     */
     public String getGrantedPermissions() {
         return grantedPermissions;
     }
 
+    /**
+     * Gets the connect network info
+     * @return network info
+     */
     public String getConnectedNetworkType() {
         return connectedNetworkType;
     }
 
+    /**
+     * Deletes all stored logs in cache
+     */
     public void clearLogs() {
         if (fileLogger != null) {
             fileLogger.clearLogs();
         }
     }
 
+    /**
+     * Append log in log file
+     * @param tag the tag
+     * @param logType the type
+     * @param message the message
+     */
     public void appendLog(String tag, FileLogger.LogType logType, String message) {
         if (fileLogger != null) {
             fileLogger.appendLog(tag, logType, message);
         }
     }
 
+    /**
+     * Gets all cached logs
+     * @return cached logs
+     */
     public String getAllLogs() {
         if (fileLogger != null) {
             return fileLogger.getAllLogs();

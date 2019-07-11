@@ -59,5 +59,16 @@ private void emailLogs(String toEmail) {
 For logging use methods like:
 
 ```
+Spl.v(this, e)
 Spl.v(this, "This is a test verbose log")
+Spl.v(this, "This is a test verbose log", e)
+```
+
+All available methods are:
+v, d, i, w, e, logBitmapInfo, logUserInfo, and logMethod
+
+Print full user navigation path by adding following lines in BaseActivity onCreate method:
+
+```
+Spl.d(this, "onCreate")
 ```
