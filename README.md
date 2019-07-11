@@ -1,6 +1,25 @@
 # SplLib
 Simpalm Logging Library an enhance of native Android logging mechanism to enhance functionality. User can additionally track user navigation path, permissions granted along wit network status.
 
+Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Add the dependency:
+
+```
+dependencies {
+	        implementation 'com.github.ramsimpalm:SplLib:1.0.2'
+	}
+```
+
 Initialize default logging configuration in your application class:
 
 ```
