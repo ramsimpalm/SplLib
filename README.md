@@ -1,7 +1,7 @@
 # SplLib
-Simpalm Logging Library an enhance of native Android logging mechanism to enhance functionality. User can additionally track user navigation path, permissions granted along wit network status.
+Simpalm Logging Library: an enhancement of native Android logging mechanism to improve the functionality. Coders can additionally track user navigation path, permissions granted along with internet connectivity status.
 
-Add it in your root build.gradle at the end of repositories:
+Add the library in your root build.gradle at the end of repositories:
 
 ```
 allprojects {
@@ -16,7 +16,7 @@ Add the dependency:
 
 ```
 dependencies {
-	        implementation 'com.github.ramsimpalm:SplLib:1.0.2'
+	        implementation 'com.github.ramsimpalm:SplLib:1.0.3'
 	}
 ```
 
@@ -26,7 +26,7 @@ Initialize default logging configuration in your application class:
 SplConfig.setSplConfig(new SplConfig.Builder(this).build());
 ```
   
-Here is sample statement for all available configuration options:
+Here is sample builder for all available options:
 
 ```
 SplConfig.setSplConfig(new SplConfig.Builder(this)
